@@ -45,7 +45,7 @@ def convert_input():
     try:
         lconversion = float(lpre_conversion)
     except ValueError:
-        message_label.config(text='err: value input not a float', fg=ERROR_C)
+        message_label.config(text='valErr: value input not a float', fg=ERROR_C)
         return
     except Exception:
         message_label.config(text='err: value input error', fg=ERROR_C)
@@ -57,7 +57,7 @@ def convert_input():
         in_pattern = data[lmeasurment][lin_sys]['pattern']
         out_pattern = data[lmeasurment][lout_sys]['pattern']
     except KeyError:
-        message_label.config(text='err: cant find input key in data', fg=ERROR_C)
+        message_label.config(text='keyErr: cant find input key in data', fg=ERROR_C)
         return
     except Exception:
         message_label.config(text='err: data inputs error', fg=ERROR_C)
@@ -67,7 +67,7 @@ def convert_input():
         operations = data[lmeasurment][lin_sys]['conversions'][lout_sys]['operators']
         steps = data[lmeasurment][lin_sys]['conversions'][lout_sys]['steps']
     except KeyError:
-        message_label.config(text='err: key data not found', fg=ERROR_C)
+        message_label.config(text='keyErr: key data not found', fg=ERROR_C)
         return
     except Exception:
         message_label.config(text='err: improper conversion data', fg=ERROR_C)
@@ -77,7 +77,7 @@ def convert_input():
         try:
             step = steps[i]
         except IndexError:
-            message_label.config(text='err: data step not found', fg=ERROR_C)
+            message_label.config(text='indexErr: data step not found', fg=ERROR_C)
             return
         except Exception: 
             message_label.config(text='err: data step', fg=ERROR_C)
@@ -102,7 +102,7 @@ def convert_input():
             else:
                 message_label.config(text=f'\'{operation}\' is an invalid operation')
         except TypeError:
-            message_label.config(text='err: non proper data step', fg=ERROR_C)
+            message_label.config(text='typeErr: non proper data step', fg=ERROR_C)
             return
         except Exception:
             message_label.config(text='err: converting problem', fg=ERROR_C)
@@ -122,10 +122,10 @@ def convert_input():
                 lconversion /= out_pattern[-1]
 
     except IndexError:
-        message_label.config(text='err: pattern data missing', fg=ERROR_C)
+        message_label.config(text='indexErr: pattern data missing', fg=ERROR_C)
         return
     except TypeError:
-        message_label.config(text='err: cant operate on non-num', fg=ERROR_C)
+        message_label.config(text='typeErr: cant operate on non-num', fg=ERROR_C)
         return
     except Exception:
         message_label.config(text='err: ranking data problem', fg=ERROR_C)
