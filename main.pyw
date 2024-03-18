@@ -104,10 +104,17 @@ def convert_input():
 
     try:
         for i in range(1, in_val_rank+1):
-            lconversion *= in_pattern[i-1]
+            try:
+                lconversion *= in_pattern[i-1]
+            except IndexError:
+                lconversion *= in_pattern[-1]
 
         for i in range(1, out_val_rank+1):
-            lconversion /= out_pattern[i-1]
+            try:
+                lconversion /= out_pattern[i-1]
+            except IndexError:
+                lconversion /= out_pattern[-1]
+
     except IndexError:
         message_label.config(text='err: pattern data missing', fg=ERROR_C)
         return
