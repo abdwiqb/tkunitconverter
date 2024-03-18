@@ -1,0 +1,119 @@
+{
+	"length": {
+		"metric": {
+			"pattern": [10],
+			"values": ["millimeter", "centimeter", "decimeter", "meter", "decameter", "hectometer", "kilometer"],
+			"conversions": {
+				"imperial": {
+					"operators": ["d"],
+					"steps": [25.4]
+				},
+				"metric": {
+					"operators": ["m"],
+					"steps": [1]
+				}
+			}
+		},
+		"imperial": {
+			"pattern": [12, 3, 1760],
+			"values": ["inch", "foot", "yard", "mile"],
+			"conversions": {
+				"metric": {
+					"operators": ["m"],
+					"steps": [25.4]
+				},
+				"imperial": {
+					"operators": ["m"],
+					"steps": [1]
+				}
+			}
+		}
+	},
+	"mass": {
+		"metric": {
+			"pattern": [10, 10, 10, 10, 10, 10, 10, 1000],
+			"values": ["milligram", "centigram", "decigram", "gram", "decagram", "hectogram", "kilogram", "metric ton"],
+			"conversions": {
+				"imperial": {
+					"operators": ["d"],
+					"steps": [28350]
+				},
+				"metric": {
+					"operators": ["m"],
+					"steps": [1]
+				}
+			}
+		},
+		"imperial": {
+			"pattern": [16, 14, 160],
+			"values": ["ounce", "pound", "stone", "imperial ton"],
+			"conversions": {
+				"metric": {
+					"operators": ["m"],
+					"steps": [28350]
+				},
+				"imperial": {
+					"operators": ["m"],
+					"steps": [1]
+				}
+			}
+		}
+
+	},
+	"temprature": {
+		"celsius": {
+			"pattern": [1],
+			"values": ["degree"],
+			"conversions": {
+				"fahrenheit": {
+					"operators": ["m", "a"],
+					"steps": [1.8, 32]
+				},
+				"kelvin": {
+					"operators": ["a"],
+					"steps": [273.15]
+				},
+				"celsius": {
+					"operators": ["m"],
+					"steps": [1]
+				}
+			}
+		},
+		"fahrenheit": {
+			"pattern": [1],
+			"values": ["degree"],
+			"conversions": {
+				"celsius": {
+					"operators": ["s", "d"],
+					"steps": [32, 1.8]
+				},
+				"kelvin": {
+					"operators": ["s", "d", "a"],
+					"steps": [32, 1.8, 273.15]
+				},
+				"fahrenheit": {
+					"operators": ["m"],
+					"steps": [1]
+				}
+			}
+		},
+		"kelvin": {
+			"pattern": [1],
+			"values": ["degree"],
+			"conversions": {
+				"celsius": {
+					"operators": ["s"],
+					"steps": [273.15]
+				},
+				"fahrenheit": {
+					"operators": ["s", "m", "a"],
+					"steps": [273.15, 1.8, 32]
+				},
+				"kelvin": {
+					"operators": ["m"],
+					"steps": [1]
+				}
+			}
+		}
+	}
+}
