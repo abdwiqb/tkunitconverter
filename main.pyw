@@ -40,9 +40,10 @@ def convert_input():
     lin_type = in_chosen_type.get()
     lout_sys = out_chosen_system.get()
     lout_type = out_chosen_type.get()
+    lpre_conversion = in_entered.get()
     
     try:
-        lconversion = float(in_entered.get())
+        lconversion = float(lpre_conversion)
     except ValueError:
         message_label.config(text='err: value input not a float', fg=ERROR_C)
         return
@@ -82,6 +83,11 @@ def convert_input():
             message_label.config(text='err: data step', fg=ERROR_C)
             return
 
+        if step == 's':
+            step = lpre_conversion
+        elif step == 'S':
+            step = lconversion
+
         try:
             if operation == 'a':
                 lconversion += step
@@ -96,7 +102,7 @@ def convert_input():
             else:
                 message_label.config(text=f'\'{operation}\' is an invalid operation')
         except TypeError:
-            message_label.config(text='err: non float/int', fg=ERROR_C)
+            message_label.config(text='err: non proper data step', fg=ERROR_C)
             return
         except Exception:
             message_label.config(text='err: converting problem', fg=ERROR_C)
