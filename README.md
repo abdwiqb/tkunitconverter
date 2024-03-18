@@ -88,3 +88,53 @@ the options frame contains the options, although there is only one option...
     2. Fahrenheit
     
     3. Kelvin 
+
+# Modifying the data
+
+the first layer is the measurment
+
+give it a name and make it  a dictionary 
+
+after is the diffrent "systems" inside
+
+for example metric and imperial are diffrent systems
+
+and so are celsius, fahrenheit and kelvin
+
+inside each system, is the pattern
+
+the pattern bassically, is how many of the prev value makes the next
+
+for metric its easy, its just *10 each time
+
+imperial... its more complex
+
+if there is no more pattern left, it takes the last value
+
+the values are the units
+
+for something like temperature, there is only one, degree
+
+after is the conversions
+
+the conversions are for the first value in both systems
+
+the conversion is multiplied and divided to the index of the type chosen
+
+in the conversions add the name of the other systems, and make it a dictionary
+
+in each conversion is the operations and the steps
+
+the operations are,
+
++ "a" for add
++ "s" for subtract
++ "m" for multiply
++ "d" for division
++ "e" for exponent
+
+the steps are what number you do each operation by
+
+you can put "s" for the input
+
+and capital "s" for what the conversion is at that point
